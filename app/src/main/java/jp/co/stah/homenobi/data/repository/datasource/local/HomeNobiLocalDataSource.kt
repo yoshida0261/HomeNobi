@@ -5,7 +5,7 @@ import jp.co.stah.homenobi.data.repository.datasource.local.room.entity.RoomActE
 
 interface HomeNobiLocalDataSource {
 
-    fun getTopicRepositories(topic: String): ActEntity
+    fun getTopicRepositories(act: String): ActEntity
     fun insertTopic(acts: List<RoomActEntity>)
     fun delete(act: RoomActEntity)
 }

@@ -9,7 +9,7 @@ class HomeNobiRoomDataSource(db : AppDataBase, mapper: TopicEntityMapper): HomeN
     private val db = db
     private val mapper = mapper
 
-    override fun getTopicRepositories(topic: String): ActEntity {
+    override fun getTopicRepositories(act: String): ActEntity {
         val repoTopic = db.topicDao().getAll()
         return mapper.convert(repoTopic)
 
