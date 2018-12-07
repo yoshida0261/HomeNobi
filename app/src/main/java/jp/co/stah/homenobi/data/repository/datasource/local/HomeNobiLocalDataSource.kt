@@ -1,11 +1,11 @@
 package jp.co.stah.homenobi.data.repository.datasource.local
 
-import jp.co.stah.homenobi.data.entity.TopicEntity
-import jp.co.stah.homenobi.data.repository.datasource.local.room.entity.RoomTopicEntity
+import jp.co.stah.homenobi.data.entity.ActEntity
+import jp.co.stah.homenobi.data.repository.datasource.local.room.entity.RoomActEntity
 
 interface HomeNobiLocalDataSource {
 
-    fun getTopicRepositories(topic: String): TopicEntity
-    fun insertTopic(topics: List<RoomTopicEntity>)
-    fun delete(topic: RoomTopicEntity)
+    fun getTopicRepositories(topic: String): ActEntity
+    fun insertTopic(acts: List<RoomActEntity>)
+    fun delete(act: RoomActEntity)
 }
