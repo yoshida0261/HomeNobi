@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-data class RoomTopicColorEntity(
+data class RoomActColorEntity(
     @PrimaryKey var uid: Int,
     @ColumnInfo(name = "background_color") var backgoundColor: String,
     @ColumnInfo(name = "text_color") var textColor: String

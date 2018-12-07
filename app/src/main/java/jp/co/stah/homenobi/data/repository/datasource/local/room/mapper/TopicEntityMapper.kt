@@ -1,10 +1,10 @@
 package jp.co.stah.homenobi.data.repository.datasource.local.room.mapper
 
-import jp.co.stah.homenobi.data.entity.TopicEntity
-import jp.co.stah.homenobi.data.repository.datasource.local.room.entity.RoomTopicEntity
+import jp.co.stah.homenobi.data.entity.ActEntity
+import jp.co.stah.homenobi.data.repository.datasource.local.room.entity.RoomActEntity
 
 class TopicEntityMapper {
-    fun convert(roomTopicEntity: List<RoomTopicEntity>) : TopicEntity{
-        return TopicEntity()
+    fun convert(roomActEntity: List<RoomActEntity>) : ActEntity{
+        return ActEntity()
     }
 }
