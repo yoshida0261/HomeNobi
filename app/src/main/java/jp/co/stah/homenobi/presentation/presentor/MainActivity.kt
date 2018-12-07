@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.AppCompatActivity
 import jp.co.stah.homenobi.R
+import jp.co.stah.homenobi.domain.usecase.GetRepository
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -34,6 +35,9 @@ class MainActivity : AppCompatActivity() {
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
         //DB初期化
+        //val repository = GetRepository()
+        val list = GetRepository.getActList()
+
 
 
 
