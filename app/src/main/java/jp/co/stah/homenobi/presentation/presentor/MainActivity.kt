@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity() {
         //val repository = GetRepository()
         val list = GetRepository.getActList()
 
+        // list 表示
 
 
 
