@@ -5,6 +5,6 @@ import jp.co.stah.homenobi.data.repository.datasource.local.room.entity.RoomActE
 
 class TopicEntityMapper {
     fun convert(roomActEntity: List<RoomActEntity>) : ActEntity{
-        return ActEntity()
+        return ActEntity("","", "")
     }
 }
