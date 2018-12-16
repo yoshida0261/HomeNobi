@@ -1,7 +1,8 @@
 package jp.co.stah.homenobi.presentation.presentor.act
 
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
+import jp.co.stah.homenobi.R
 import jp.co.stah.homenobi.presentation.presentor.act.ui.actlist.ActListFragment
 
 class ActListActivity : AppCompatActivity() {

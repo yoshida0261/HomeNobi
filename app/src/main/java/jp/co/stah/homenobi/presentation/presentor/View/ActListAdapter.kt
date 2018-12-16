@@ -6,6 +6,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import jp.co.stah.homenobi.data.entity.ActEntity
 
+// 消すかも
 class ActListAdapter(context: Context, resource: Int) : ArrayAdapter<ActEntity>(context, resource) {
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
