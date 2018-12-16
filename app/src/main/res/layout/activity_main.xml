@@ -20,6 +20,7 @@
             app:layout_constraintRight_toRightOf="parent"
             app:menu="@menu/navigation"/>
     <ListView
+            android:id="@+id/act_list"
             android:layout_width="368dp"
             android:layout_height="439dp"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
