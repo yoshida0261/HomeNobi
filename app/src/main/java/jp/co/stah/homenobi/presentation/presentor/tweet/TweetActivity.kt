@@ -7,6 +7,9 @@ import jp.co.stah.homenobi.R
 
 class TweetActivity : AppCompatActivity(){
 
+    // メイン画面
+    // ここに各種actを表示させるなどをする
+
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
         setContentView(R.layout.activity_main)
