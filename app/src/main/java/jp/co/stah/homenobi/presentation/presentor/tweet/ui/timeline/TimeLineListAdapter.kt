@@ -9,7 +9,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import jp.co.stah.homenobi.R
 
-class TimeLineListAdapter(context: Context, resource: Int, items:List<TimeLineViewModel>) : ArrayAdapter<TimeLineViewModel>(context, resource) {
+class TimeLineListAdapter(context: Context, resource: Int, items:List<TimeLineViewModel>) : ArrayAdapter<TimeLineViewModel>(context, resource, items) {
     private lateinit var layoutInflater: LayoutInflater
     private val resource = resource
     private val items = items
@@ -23,10 +23,10 @@ class TimeLineListAdapter(context: Context, resource: Int, items:List<TimeLineVi
 
         var view : View
         if (convertView != null) {
-            view = convertView;
+            view = convertView
         }
         else {
-            view = layoutInflater.inflate(resource, null);
+            view = layoutInflater.inflate(R.layout.tw_list_item, null)
         }
 
         val act = items.get(position)
