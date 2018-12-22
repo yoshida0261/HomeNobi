@@ -21,12 +21,25 @@
             app:menu="@menu/navigation"/>
     <ListView
             android:id="@+id/act_list"
-            android:layout_width="368dp"
-            android:layout_height="449dp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp" android:layout_marginBottom="8dp"
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp"
             app:layout_constraintBottom_toTopOf="@+id/navigation"
-    />
+            android:layout_marginTop="8dp" app:layout_constraintTop_toBottomOf="@+id/linearLayout"/>
+
+    <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/ic_add_00b5d4_48dp"
+            app:backgroundTint="@color/yellow"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/act_list"/>
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="368dp"
@@ -37,32 +50,45 @@
             android:layout_marginEnd="8dp"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp" app:layout_constraintHorizontal_bias="0.4">
+
         <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
             <ImageView
                     android:layout_width="48dp"
-                    android:layout_height="48dp" app:srcCompat="@mipmap/ic_launcher_round"
-                    android:id="@+id/imageView" app:layout_constraintStart_toStartOf="parent"
+                    android:layout_height="48dp" app:srcCompat="@mipmap/andorry"
+                    android:id="@+id/andorry" app:layout_constraintStart_toStartOf="parent"
                     android:layout_marginStart="16dp" android:layout_marginTop="8dp"
                     app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
                     app:layout_constraintBottom_toBottomOf="parent"/>
-            <TextView
-                    android:text="name"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" android:id="@+id/textView" android:layout_weight="1"
-                    app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toEndOf="@+id/imageView"
-                    android:layout_marginStart="8dp" android:layout_marginTop="8dp"/>
+            <android.support.v7.widget.ContentFrameLayout android:layout_width="275dp"
+                                                          android:layout_height="52dp"
+                                                          app:layout_constraintStart_toEndOf="@+id/andorry"
+                                                          android:layout_marginBottom="8dp"
+                                                          app:layout_constraintBottom_toBottomOf="parent"
+                                                          app:layout_constraintEnd_toEndOf="parent"
+                                                          android:layout_marginEnd="8dp" android:layout_marginTop="8dp"
+                                                          app:layout_constraintTop_toTopOf="parent">
 
-            <TextView
-                    android:text="★"
-                    android:layout_width="59dp"
-                    android:layout_height="19dp" android:id="@+id/textView2" android:layout_weight="1"
-                    android:layout_marginTop="8dp"
-                    app:layout_constraintTop_toBottomOf="@+id/textView" android:layout_marginBottom="8dp"
-                    app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toEndOf="@+id/imageView"
-                    android:layout_marginStart="8dp"/>
+                <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/ic_fukidashi_dot_oval_02"
+                />
+                <TextView
+                        android:text="＋を押してやったことを書いてね"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/comment"
+                        android:layout_weight="1"
+                        app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toEndOf="@+id/andorry"
+                        android:layout_marginStart="24dp" android:layout_marginTop="8dp"/>
+            </android.support.v7.widget.ContentFrameLayout>
+
+
+
         </android.support.constraint.ConstraintLayout>
+
 
     </LinearLayout>
 
