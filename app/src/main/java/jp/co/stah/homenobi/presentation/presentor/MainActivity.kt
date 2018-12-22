@@ -14,9 +14,9 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Base64
 import android.widget.ImageView
 import android.widget.ListView
-import android.widget.Toast
 import jp.co.stah.homenobi.R
 import jp.co.stah.homenobi.presentation.presentor.act.ActListActivity
+import jp.co.stah.homenobi.presentation.presentor.act.AddActActivity
 import jp.co.stah.homenobi.presentation.presentor.tweet.ui.timeline.TimeLineListAdapter
 import jp.co.stah.homenobi.presentation.presentor.tweet.ui.timeline.TimeLineViewModel
 import kotlinx.android.synthetic.main.activity_main.*
@@ -39,7 +39,6 @@ class MainActivity : AppCompatActivity() {
                 // message.setText(R.string.title_dashboard)
                 val intent = Intent(this, ActListActivity::class.java)
                 startActivity(intent)
-                finish()
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_notifications -> {
@@ -60,7 +59,11 @@ class MainActivity : AppCompatActivity() {
 
         val fav = findViewById<FloatingActionButton>(R.id.fab)
         fav.setOnClickListener {
-            Toast.makeText(this@MainActivity, "FABが押されました", Toast.LENGTH_SHORT).show();
+            //
+            val intent = Intent(this, AddActActivity::class.java)
+            startActivity(intent)
+
+           // Toast.makeText(this@MainActivity, "FABが押されました", Toast.LENGTH_SHORT).show();
         }
 
 
