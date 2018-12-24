@@ -15,4 +15,15 @@ class AddActActivity : AppCompatActivity() {
 
     }
 
+    /*
+    private fun insertData() {
+        val myEntity = RoomActEntity(1, "myDeviceClass")
+        val context = applicationContext ?: return
+        val db = AppDataBase.getInstance(context)!!
+        /*
+        Completable.fromAction { val id = db.userDao().insertAll(myEntity) }
+            .subscribeOn(Schedulers.io())
+            .subscribe()*/
+    }*/
+
 }

@@ -9,23 +9,20 @@ import android.widget.ImageView
 import android.widget.TextView
 import jp.co.stah.homenobi.R
 
-class TimeLineListAdapter(context: Context, resource: Int, items:List<TimeLineViewModel>) : ArrayAdapter<TimeLineViewModel>(context, resource, items) {
-    private lateinit var layoutInflater: LayoutInflater
+class TimeLineListAdapter(context: Context, resource: Int, items: List<TimeLineViewModel>) :
+    ArrayAdapter<TimeLineViewModel>(context, resource, items) {
+    private var layoutInflater: LayoutInflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
     private val resource = resource
     private val items = items
-    init {
-         layoutInflater =  context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-    }
 
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
 
 
-        var view : View
+        var view: View
         if (convertView != null) {
             view = convertView
-        }
-        else {
+        } else {
             view = layoutInflater.inflate(R.layout.tw_list_item, null)
         }
 
@@ -39,7 +36,7 @@ class TimeLineListAdapter(context: Context, resource: Int, items:List<TimeLineVi
 
         val image = view.findViewById<ImageView>(R.id.act_image)
         //image.setImageDrawable(act.actImage)
-       // image.setImageDrawable(R.drawable.ic_dashboard_black_24dp)
+        // image.setImageDrawable(R.drawable.ic_dashboard_black_24dp)
 
         val discription = view.findViewById<TextView>(R.id.act_discription)
         discription.setText(act.actText)

@@ -63,16 +63,16 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, AddActActivity::class.java)
             startActivity(intent)
 
-           // Toast.makeText(this@MainActivity, "FABが押されました", Toast.LENGTH_SHORT).show();
+            // Toast.makeText(this@MainActivity, "FABが押されました", Toast.LENGTH_SHORT).show();
         }
 
 
         // androrryの読み込み
-        val pref  = getSharedPreferences("andrroy", Context.MODE_PRIVATE)
+        val pref = getSharedPreferences("andrroy", Context.MODE_PRIVATE)
         val s = pref.getString("key", "")
         val andrry = findViewById<ImageView>(R.id.andorry)
-        if (!s.equals("")) {
-            val options = BitmapFactory.Options()
+        if (s != "") {
+            //val options = BitmapFactory.Options()
             val basebyte = Base64.decode(s, Base64.DEFAULT)
 
             val bitmap = BitmapFactory.decodeByteArray(basebyte, 0, basebyte.size).copy(Bitmap.Config.ARGB_8888, true);
@@ -110,16 +110,26 @@ class MainActivity : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, resultData: Intent?) {
         if (requestCode == READ_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
-            var uri: Uri? = null
+            var uri: Uri?
             if (resultData != null) {
                 uri = resultData.data
                 try {
                     val bitmap = MediaStore.Images.Media.getBitmap(this.getContentResolver(), uri)
-                    this.findViewById<ImageView>(R.id.andorry)?.setImageBitmap(bitmap)
+
+                    val height = if (bitmap.width < bitmap.height) {
+                        bitmap.width
+                    } else {
+                        bitmap.height
+                    }
+
+                    val croppedBmp =
+                        Bitmap.createBitmap(bitmap, height / 4, 0, height / 2, height / 2)
+
+                    this.findViewById<ImageView>(R.id.andorry)?.setImageBitmap(croppedBmp)
 
                     // prefに保存
                     val baos = ByteArrayOutputStream()
-                    bitmap.compress(Bitmap.CompressFormat.PNG, 100, baos)
+                    croppedBmp.compress(Bitmap.CompressFormat.PNG, 100, baos)
                     val bitmapStr = Base64.encodeToString(baos.toByteArray(), Base64.DEFAULT)
 
                     val pref = this.getSharedPreferences("andrroy", Context.MODE_PRIVATE)
