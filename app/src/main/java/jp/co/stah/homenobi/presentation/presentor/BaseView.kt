@@ -5,14 +5,14 @@ import android.content.Intent
 import android.support.v4.app.FragmentActivity
 
 interface BaseView {
-    abstract fun startActivity(intent: Intent)
+    fun startActivity(intent: Intent)
 
-    abstract fun startActivityForResult(intent: Intent, requestCode: Int)
+    fun startActivityForResult(intent: Intent, requestCode: Int)
 
-    abstract fun finishActivity()
+    fun finishActivity()
 
-    abstract fun getContext(): Context?
+    fun getContext(): Context?
 
-    abstract fun getActivity(): FragmentActivity?
+    fun getActivity(): FragmentActivity?
 
 }
